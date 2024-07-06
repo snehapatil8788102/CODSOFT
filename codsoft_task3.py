@@ -1,31 +1,15 @@
 import random
-
-options = ("rock", "paper", "scissors")
-running = True
-
-while running:
-
-    player = None
-    computer = random.choice(options)
-
-    while player not in options:
-        player = input("Enter a choice (rock, paper, scissors): ")
-
-    print(f"Player: {player}")
-    print(f"Computer: {computer}")
-
-    if player == computer:
-        print("It's a tie!")
-    elif player == "rock" and computer == "scissors":
-        print("You win!")
-    elif player == "paper" and computer == "rock":
-        print("You win!")
-    elif player == "scissors" and computer == "paper":
-        print("You win!")
-    else:
-        print("You lose!")
-
-    if not input("Play again? (y/n): ").lower() == "y":
-        running = False
-
-print("Thanks for playing!")
+import string
+password=''
+print('welcome to password generator\n')
+words=[random.choice(string.ascii_letters)
+for i in range(int(input('enter how many letters:')))]
+numbers=[random.choice(string.digits)
+for i in range(int(input('enter how many numbers:')))]
+symbol=[random.choice(string.punctuation)
+for i in range(int(input('enter how many symbols:')))]
+key=words+numbers+symbol
+random.shuffle(key)
+for i in key:
+    password=password+i
+print(password)
